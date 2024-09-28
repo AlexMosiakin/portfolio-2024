@@ -1,0 +1,25 @@
+.button {
+    padding: 0.5dvw;
+    border-radius: 8px;
+    box-shadow: -3px 4px 0 2px #1A1C22;
+    background: transparent;
+    border: 3px solid #1A1C22;
+    color: #1A1C22;
+    font-size: 1.5dvw;
+    font-weight: bold;
+    cursor: pointer;
+    height: 4.3dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: -3px 4px 0 2px #580EF6;;
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(4px);
+      }
+}

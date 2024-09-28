@@ -2,9 +2,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 64px 64px 0;
-    position: fixed;
+    padding: 3.33dvw 3.33dvw 0;
+    position: absolute;
     width: 100%;
     opacity: 0;
     display: none;
+    z-index: 1;
+
+    .logo {
+        cursor: pointer;
+        font-family: "Bungee Shade", sans-serif;
+        font-size: 3.05dvw;
+        margin: 0;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+
+        .button:first-of-type {
+            margin-right:40px;
+        }
+    }
 }
