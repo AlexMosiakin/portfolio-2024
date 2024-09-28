@@ -1,0 +1,10 @@
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 64px 0;
+    position: fixed;
+    width: 100%;
+    opacity: 0;
+    display: none;
+}
