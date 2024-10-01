@@ -83,6 +83,7 @@ export const BrickWall = () => {
                 gsap.to('.header-wrapper', { display: "flex", opacity: 1, duration: 1 });
                 gsap.to('.content-subtitle', { display: "block", opacity: 1, duration: 1 });
                 gsap.to('.content-title', { display: "block", opacity: 1, duration: 1 });
+                gsap.to('body', { overflowY: "scroll", duration: 1 });
             }, 2000);
         }
 

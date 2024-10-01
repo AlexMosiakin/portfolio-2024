@@ -10,6 +10,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
 }
 
 .container {
@@ -20,6 +21,7 @@
   justify-content: center;
   flex-direction: column;
   padding: 3.33dvw;
+  min-height: 100dvh;
 }
 
 .main-section {
@@ -31,13 +33,21 @@
   justify-content: center;
   flex-direction: column;
 
-  .content-hello {
-    color: #F7F7F7;
-    font-family: "Bungee Inline", sans-serif;
-    font-size: 10dvw;
-    line-height: 10dvw;
-    text-shadow: 4px 19px 28px #580EF6;
+  .content-hello-wrapper {
+    position: relative;
+
+    .content-hello {
+      color: #F7F7F7;
+      font-family: "Bungee", sans-serif;
+      font-size: 10dvw;
+      line-height: 10dvw;
+      text-shadow: 4px 19px 28px #580EF6;
+      cursor: pointer;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
   }
+
 
   .content-title,
   .content-subtitle {
@@ -68,9 +78,85 @@
 
 .about-section {
   font-size: 2.12dvw;
-  min-height: 100dvh;
 
   p {
     margin: 0;
+    text-align: justify;
+  }
+}
+
+.about-section,
+.experience-section {
+  font-size: 2.12dvw;
+
+  p {
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+.experience-section {
+  flex-direction: row;
+
+  .experience-text-wrapper {
+    width: 66.66%;
+  }
+
+  .experience-image-wrapper {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 5.65dvw;
+  }
+}
+
+.projects-section {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2dvw;
+
+    .projects-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+
+      p {
+        font-family: "Bungee", sans-serif;
+        color: #F7F7F7;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.35dvw;
+        margin: 0;
+        z-index: 1;
+        transition: all 0.3s ease;
+        text-shadow: -4px 4px 0px #1A1C22;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: blur(4px);
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        p {
+          opacity: 0;
+        }
+
+        img {
+          filter: blur(0);
+        }
+      }
+    }
   }
 }
