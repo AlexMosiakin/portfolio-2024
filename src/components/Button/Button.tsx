@@ -3,12 +3,14 @@ import './button.scss'
 
 interface IButton {
     content: string | JSX.Element;
+    style?: React.CSSProperties;
 }
 
 export const Button: React.FC<IButton> = ({
     content,
+    style,
 }) => {
   return (
-    <button className='button'>{content}</button>
+    <button className='button' style={style}>{content}</button>
   )
 }

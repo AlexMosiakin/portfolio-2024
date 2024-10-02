@@ -1,0 +1,26 @@
+.textarea {
+    padding: 0.5dvw;
+    border-radius: 8px;
+    background: transparent;
+    border: 3px solid #1A1C22;
+    color: #1A1C22;
+    font-size: 1.5dvw;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    outline: none;
+    resize: none;
+
+    &::placeholder {
+        color: #1A1C22;
+        font-weight: bold;
+        font-size: 1.5dvw;
+    }
+
+    &:active, &:focus {
+        border: 3px solid #580EF6;
+    }
+}

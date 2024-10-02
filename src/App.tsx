@@ -4,11 +4,24 @@ import { BrickWall } from './modules/BrickWall/BrickWall'
 import bgParticles from './assets/bgParticles.png'
 import companies from './assets/companies.png'
 import otkis from './assets/projects/otkis.png'
+import plane from './assets/plane.svg'
+import { Button } from './components/Button/Button'
+import { Input } from './components/Input/Input'
+import { Textarea } from './components/Textarea/Textarea'
+import { useRef } from 'react'
 
 function App() {
   window.addEventListener('unload', function (_e) {
     window.scrollTo(0, 0)
   });
+
+  const planeImage = useRef<HTMLImageElement>(null)
+  window.addEventListener('mousemove', (e) => {
+    if (planeImage.current) {
+      planeImage.current.style.left = `${(e as MouseEvent).clientX / 10}px`
+      planeImage.current.style.top = `${(e as MouseEvent).clientY / 10}px`
+    }
+  })
 
   return (
     <>
@@ -85,6 +98,44 @@ function App() {
           </div>
         </div>
       </section>
+      <section className='container contacts-section'>
+        <div className='contacts-grid'>
+          <div className='contacts-image-wrapper'>
+            <img className='contacts-image' ref={planeImage} src={plane} alt="plane" />
+          </div>
+          <div className='contacts-form-wrapper'>
+            <form className='contacts-form' action="" method="post">
+              <Input
+                style={{ width: '100%', marginBottom: '1.69dvw' }}
+                placeholder='Name'
+              />
+              <Input
+                style={{ width: '100%', marginBottom: '1.69dvw' }}
+                placeholder='Email'
+              />
+              <Textarea
+                style={{ width: '100%', marginBottom: '1.69dvw' }}
+                placeholder='Project details'
+              />
+              <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} />
+            </form>
+          </div>
+        </div>
+      </section>
+      <footer className='footer-wrapper'>
+        <div className='footer-header'>
+          <p className='footer-name'>ALEX MOSS</p>
+          <nav className='footer-nav'>
+            <ul>
+              <li>About</li>
+              <li>Experience</li>
+              <li>Cases</li>
+              <li>Contacts</li>
+            </ul>
+          </nav>
+        </div>
+        <p className='footer-copyright'>© 2024 Alex Moss. All rights reserved.</p>
+      </footer>
     </>
   )
 }
