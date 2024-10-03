@@ -1,0 +1,25 @@
+.experience-section {
+  flex-direction: row;
+  font-size: 2.12dvw;
+
+  p {
+    margin: 0;
+    text-align: justify;
+  }
+
+
+  .experience-text-wrapper {
+    width: 66.66%;
+  }
+
+  .experience-image-wrapper {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 5.65dvw;
+  }
+}
