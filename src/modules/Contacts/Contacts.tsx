@@ -39,19 +39,19 @@ export const Contacts: React.FC<IContacts> = ({
                         <Input
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69dvw' }}
+                            style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Name'
                         />
                         <Input
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69dvw' }}
+                            style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Email'
                         />
                         <Textarea
                             value={details}
                             onChange={(e) => setDetails(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69dvw' }}
+                            style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Project details'
                         />
                         <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} action={() => {}} />

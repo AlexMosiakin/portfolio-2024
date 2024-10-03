@@ -1,10 +1,10 @@
 .textarea {
-    padding: 0.5dvw;
+    padding: 0.5lvw;
     border-radius: 8px;
     background: transparent;
     border: 3px solid #1A1C22;
     color: #1A1C22;
-    font-size: 1.5dvw;
+    font-size: 1.5lvw;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -17,7 +17,7 @@
     &::placeholder {
         color: #1A1C22;
         font-weight: bold;
-        font-size: 1.5dvw;
+        font-size: 1.5lvw;
     }
 
     &:hover {

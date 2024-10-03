@@ -2,7 +2,7 @@
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.5dvw;
+    gap: 3.5lvw;
     width: 100%;
     height: 100%;
 
@@ -31,7 +31,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.35dvw;
+        font-size: 2.35lvw;
         margin: 0;
         z-index: 1;
         transition: all 0.3s ease;
