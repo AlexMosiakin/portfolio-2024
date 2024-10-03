@@ -21,8 +21,7 @@ export const Textarea: React.FC<ITextarea> = ({
       style={style}
       placeholder={placeholder}
       rows={4}
-    >
-      {value}
-    </textarea>
+      value={value}
+    />
   )
 }

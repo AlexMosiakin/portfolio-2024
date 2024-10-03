@@ -21,8 +21,7 @@ export const Input: React.FC<IInput> = ({
       style={style}
       placeholder={placeholder}
       type='text'
-    >
-      {value}
-    </input>
+      value={value}
+    />
   )
 }

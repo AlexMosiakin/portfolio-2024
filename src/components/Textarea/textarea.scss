@@ -20,7 +20,11 @@
         font-size: 1.5dvw;
     }
 
+    &:hover {
+        box-shadow: -3px 4px 0 2px #1A1C22;
+    }
+
     &:active, &:focus {
-        border: 3px solid #580EF6;
+        box-shadow: -3px 4px 0 2px #580EF6;
     }
 }
