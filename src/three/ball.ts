@@ -1,6 +1,6 @@
 import * as CANNON from 'cannon-es';
 import * as THREE from 'three';
-import { TBAll } from './main'
+import { TBAll } from '../modules/BrickWall/BrickWall';
 
 // Create the invisible ball to destroy the wall
 export function createBall(ball: TBAll, world: CANNON.World, scene: THREE.Scene) {
