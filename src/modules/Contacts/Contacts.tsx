@@ -3,7 +3,6 @@ import { Button } from '../../components/Button/Button'
 import { Input } from '../../components/Input/Input'
 import { Textarea } from '../../components/Textarea/Textarea'
 import './contacts.scss'
-import plane from '../../assets/plane.svg'
 
 interface IContacts {
     contacts: RefObject<HTMLDivElement>
