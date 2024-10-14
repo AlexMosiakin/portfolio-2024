@@ -12,15 +12,14 @@ export const Header: React.FC<IHeader> = ({
 }) => {
 
     const onContactMeClick = () => {
-        contacts.current?.scrollIntoView({ behavior: 'smooth'})
+        contacts.current?.scrollIntoView({ behavior: 'smooth' })
     }
 
     return (
         <div className="header-wrapper">
-            <div className="logo">AM</div>
+            <Button content={<img src={menuIcon} alt='menu' />} action={() => { }} />
             <div className='header-actions'>
-                <Button content={'Contact me'} action={onContactMeClick}/>
-                <Button content={<img src={menuIcon} alt='menu' />} action={() => {}}/>
+                <Button content={'Contact me'} action={onContactMeClick} />
             </div>
         </div>
     )

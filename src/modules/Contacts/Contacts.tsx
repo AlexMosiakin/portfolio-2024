@@ -28,8 +28,15 @@ export const Contacts: React.FC<IContacts> = ({
     return (
         <section className='container contacts-section' ref={contacts}>
             <div className='contacts-grid'>
-                <div className='contacts-image-wrapper'>
-                    <img className='contacts-image' ref={planeImage} src={plane} alt="plane" />
+                <div className='contacts-image-wrapper' >
+                    <div ref={planeImage}>
+                        <svg className='contacts-image' viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M41 325.5L143 244" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M45 452L147 370.5" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M187 407L289 325.5" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M156 223L58 177L470.5 59M156 223L187 345.5M156 223L470.5 59M187 345.5L245.5 285M187 345.5L199.5 261M245.5 285L336.5 326L470.5 59M245.5 285L199.5 261M470.5 59L199.5 261" stroke="black" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
                 </div>
                 <div className='contacts-form-wrapper'>
                     <form
@@ -54,7 +61,7 @@ export const Contacts: React.FC<IContacts> = ({
                             style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Project details'
                         />
-                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} action={() => {}} />
+                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} action={() => { }} />
                     </form>
                 </div>
             </div>

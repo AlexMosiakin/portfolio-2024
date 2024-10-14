@@ -1,25 +1,86 @@
 .experience-section {
-  flex-direction: row;
+  justify-content: space-evenly;
   font-size: 2.12lvw;
-
-  p {
-    margin: 0;
-    text-align: justify;
-  }
 
 
   .experience-text-wrapper {
-    width: 66.66%;
+    background: #fff;
+    border-radius: 1.63lvw;
+    padding: 1.63lvw;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      width: 35%;
+      margin: 0;
+    }
+
+    &_skills {
+      width: 63%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.63lvw;
+    }
+  }
+
+
+  .experience-image-banner {
+    display: flex;
+    align-items: center;
+    gap: 6.66lvw;
+    position: relative;
+    width: 100lvw;
   }
 
   .experience-image-wrapper {
-    width: 33.33%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+
+    p {
+
+      margin: 0;
+      padding: 0.586lvw 1.63lvw;
+      border: 3px solid #1A1C22;
+      border-radius: 2.63vw;
+      font-weight: bold;
+      min-height: 4.3lvw;
+    }
+
+    img {
+      width: 4.3lvw;
+      height: 4.3lvw;
+      object-fit: cover;
+    }
   }
 
-  img {
-    width: 5.65lvw;
+  .experience-image-wrapper.first {
+    left: -100%;
+    animation: 10s banner infinite linear;
+
+    p:last-of-type {
+      margin-right: 6.66lvw;
+    }
+  }
+
+  .experience-image-wrapper.second {
+    left: 0;
+    animation: 10s banner infinite linear;
+
+    p:last-of-type {
+      margin-right: 6.66lvw;
+    }
+  }
+
+  @keyframes banner {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(100%);
+    }
   }
 }

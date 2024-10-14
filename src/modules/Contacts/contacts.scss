@@ -1,43 +1,49 @@
 .contacts-section {
-    .contacts-grid {
+  .contacts-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.33lvw;
+    width: 100%;
+    height: 100%;
+
+    .contacts-image-wrapper,
+    .contacts-form-wrapper {
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 3.33lvw;
-      width: 100%;
-      height: 100%;
-  
-      .contacts-image-wrapper,
-      .contacts-form-wrapper {
+    }
+
+    .contacts-image-wrapper {
+      position: relative;
+
+      div {
+        width: 26.65lvw;
+        height: 26.65lvw;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+
+      .contacts-image {
         width: 100%;
         height: 100%;
+        object-fit: cover;
+
+      }
+    }
+
+    .contacts-form-wrapper {
+      .contacts-form {
         display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      .contacts-image-wrapper {
-        position: relative;
-  
-        .contacts-image {
-          position: absolute;
-          width: 26.65lvw;
-          height: 26.65lvw;
-          object-fit: cover;
-          transform: translate(-50%, -50%);
-        }
-      }
-  
-      .contacts-form-wrapper {
-        .contacts-form {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          height: 100%;
-          border: 3px solid #1A1C22;
-          border-radius: 1.16lvw;
-          padding: 3.33lvw;
-        }
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #1A1C22;
+        border-radius: 1.16lvw;
+        padding: 3.33lvw;
       }
     }
   }
+}
