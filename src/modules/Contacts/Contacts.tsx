@@ -1,8 +1,11 @@
-import { RefObject, useRef, useState } from 'react'
+import { RefObject, useLayoutEffect, useRef, useState } from 'react'
 import { Button } from '../../components/Button/Button'
 import { Input } from '../../components/Input/Input'
 import { Textarea } from '../../components/Textarea/Textarea'
 import './contacts.scss'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 interface IContacts {
     contacts: RefObject<HTMLDivElement>
@@ -13,6 +16,8 @@ export const Contacts: React.FC<IContacts> = ({
 }) => {
 
     const planeImage = useRef<HTMLImageElement>(null)
+    const contactForm = useRef(null);
+
     window.addEventListener('mousemove', (e) => {
         if (planeImage.current) {
             planeImage.current.style.left = `calc(50% - ${(e as MouseEvent).clientX / 15}px)`
@@ -23,6 +28,45 @@ export const Contacts: React.FC<IContacts> = ({
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [details, setDetails] = useState('')
+
+    useLayoutEffect(() => {
+        const form = contactForm.current;
+        const plane = planeImage.current?.children[0];
+
+        if (plane) {
+            gsap.fromTo(
+                plane,
+                {
+                    clipPath: 'inset(100%)',
+                },
+                {
+                    clipPath: 'inset(0%)',
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: plane,
+                        start: 'top 50%',
+                    },
+                }
+            );
+        }
+        gsap.fromTo(
+            form,
+            {
+                x: 100,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                delay: 0.5,
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: plane,
+                    start: 'top 50%',
+                },
+            }
+        );
+    }, []);
 
     return (
         <section className='container contacts-section' ref={contacts}>
@@ -37,7 +81,7 @@ export const Contacts: React.FC<IContacts> = ({
                         </svg>
                     </div>
                 </div>
-                <div className='contacts-form-wrapper'>
+                <div className='contacts-form-wrapper' ref={contactForm}>
                     <form
                         className='contacts-form'
                         action={`mailto:aleksandrmosiakin@gmail.com?subject=New project from ${name}&body=${details}`}

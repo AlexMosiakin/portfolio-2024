@@ -18,13 +18,17 @@ function App() {
   return (
     <>
       <img className='bg-particles' src={bgParticles} alt="bgParticles" />
-      <Header contacts={contacts} />
-      <Main />
-      <About />
-      <Experience />
-      <Projects />
-      <Contacts contacts={contacts} />
-      <Footer />
+      <div id="smooth-wrapper" className="App">
+        <div id="smooth-content">
+          <Header contacts={contacts} />
+          <Main />
+          <About />
+          <Experience />
+          <Projects />
+          <Contacts contacts={contacts} />
+          <Footer />
+        </div>
+      </div>
     </>
   )
 }
