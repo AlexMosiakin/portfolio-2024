@@ -1,13 +1,12 @@
 .button {
     padding: 0.5lvw;
     border-radius: 8px;
-    box-shadow: -3px 4px 0 2px #1A1C22;
     background: transparent;
     border: 3px solid #1A1C22;
     color: #1A1C22;
     font-size: 1.5lvw;
     font-weight: bold;
-    cursor: pointer;
+    cursor: none;
     min-height: 4.3lvw;
     min-width: 4.3lvw;
     display: flex;
@@ -16,11 +15,11 @@
     transition: all 0.3s ease;
 
     &:hover {
-        box-shadow: -3px 4px 0 2px #580EF6;
+        box-shadow: -3px 4px 0 2px #1A1C22;
+        
     }
 
     &:active {
-        box-shadow: none;
-        transform: translateY(4px);
-      }
+        box-shadow: -3px 4px 0 2px #580EF6;
+    }
 }
