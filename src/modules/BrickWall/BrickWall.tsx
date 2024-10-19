@@ -89,6 +89,7 @@ export const BrickWall = () => {
 
         // Start destruction on click
         helloDiv?.addEventListener('click', () => {
+            helloDiv.style.textShadow = '4px 19px 28px #580EF6';
             gsap.to(helloDiv, { display: "none", opacity: 0, duration: 1, onComplete: shootBall });
         });
         init();

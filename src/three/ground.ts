@@ -13,7 +13,7 @@ export function createGround(world: CANNON.World, scene: THREE.Scene) {
     world.addBody(groundBody);
 
     // Visual ground (optional, hidden but helps visualize)
-    let groundMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00, visible: false });
+    let groundMaterial = new THREE.MeshBasicMaterial({ color: 0xfF7F7F7, visible: false });
     let groundGeometry = new THREE.PlaneGeometry(100, 100);
     let ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.position.set(0, -7.5, 0);

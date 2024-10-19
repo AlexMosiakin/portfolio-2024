@@ -6,7 +6,7 @@ import { TBAll } from '../modules/BrickWall/BrickWall';
 export function createBall(ball: TBAll, world: CANNON.World, scene: THREE.Scene) {
     let radius = 10;
     let geometry = new THREE.SphereGeometry(radius, 32, 32);
-    let material = new THREE.MeshBasicMaterial({ color: 0xffff00, transparent: true, opacity: 0 }); // Invisible ball
+    let material = new THREE.MeshBasicMaterial({ color: 0xF7F7F7, transparent: true, opacity: 0 }); // Invisible ball
     ball = new THREE.Mesh(geometry, material);
     ball.position.set(-0.5, 0, 10);  // Start far behind the wall
     scene.add(ball);

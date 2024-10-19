@@ -18,7 +18,7 @@ html {
 
 *::selection {
   background: #580EF6;
-  color: #ffffff;
+  color: #F7F7F7;
 }
 
 body {
@@ -27,6 +27,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  position: relative;
   overflow: hidden;
-  position: relative
+
+  &.stopScroll {
+    overflow-y: hidden !important;
+  }
 }

@@ -1,0 +1,33 @@
+.menuWrapper {
+    position: absolute;
+    width: 100lvw;
+    height: 100lvh;
+    background: center / cover no-repeat url("../../assets/wall.jpg");
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type: none;
+    transition: all 0.3s ease;
+
+    >li {
+        color: #F7F7F7;
+        font-family: "Bungee", sans-serif;
+        font-size: 4.4lvw;
+        cursor: none;
+        margin: 0;
+        transition: all 0.3s ease;
+        text-shadow: 4px 19px 28px #1A1C22;
+
+        &:hover {
+            text-shadow: 4px 19px 28px #f7f7f781;
+        }
+
+        &:active {
+            text-shadow: 4px 19px 28px #580EF6;
+        }
+    }
+}

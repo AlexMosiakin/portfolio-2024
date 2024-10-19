@@ -2,8 +2,6 @@
     padding: 0.5lvw;
     border-radius: 8px;
     background: transparent;
-    border: 3px solid #1A1C22;
-    color: #1A1C22;
     font-size: 1.5lvw;
     font-weight: bold;
     cursor: none;
@@ -14,12 +12,32 @@
     justify-content: center;
     transition: all 0.3s ease;
 
-    &:hover {
-        box-shadow: -3px 4px 0 2px #1A1C22;
-        
+    &.dark {
+        color: #1A1C22;
+        border: 3px solid #1A1C22;
+
+        &:hover {
+            box-shadow: -3px 4px 0 2px #1A1C22;
+
+        }
+
+        &:active {
+            box-shadow: -3px 4px 0 2px #580EF6;
+        }
     }
 
-    &:active {
-        box-shadow: -3px 4px 0 2px #580EF6;
+    &.light {
+        color: #f7f7f7;
+        background: #1A1C22;
+        border: 3px solid #f7f7f7;
+
+        &:hover {
+            box-shadow: -3px 4px 0 2px #f7f7f7;
+
+        }
+
+        &:active {
+            box-shadow: -3px 4px 0 2px #580EF6;
+        }
     }
 }

@@ -7,16 +7,29 @@ import { Experience } from './modules/Experience/Experience'
 import { Projects } from './modules/Projects/Projects'
 import { Footer } from './modules/Footer/Footer'
 import { Contacts } from './modules/Contacts/Contacts'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Menu } from './modules/Menu/Menu'
 
 function App() {
-  window.addEventListener('unload', function (_e) {
-    window.scrollTo(0, 0)
-  });
+  const body = document.querySelector('body') as HTMLElement
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const contacts = useRef<HTMLDivElement>(null)
   const cursor = useRef<HTMLDivElement>(null)
 
-  const body = document.querySelector('body')
+  const menuToggle = () => setIsMenuOpen(!isMenuOpen)
+  const menuClose = () => setIsMenuOpen(false)
+
+  useEffect(() => {
+    if (body) {
+      isMenuOpen ? body.classList.add('stopScroll') : body.classList.remove('stopScroll')
+    }
+  }, [isMenuOpen, body])
+
+  window.addEventListener('unload', function (_e) {
+    window.scrollTo(0, 0)
+  });
+
   window.addEventListener('mousemove', (e) => {
     if (cursor.current && body) {
 
@@ -71,17 +84,14 @@ function App() {
         </svg>
       </div>
       <img className='bg-particles' src={bgParticles} alt="bgParticles" />
-      <div id="smooth-wrapper" className="App">
-        <div id="smooth-content">
-          <Header contacts={contacts} />
-          <Main />
-          <About />
-          <Experience />
-          <Projects />
-          <Contacts contacts={contacts} />
-          <Footer />
-        </div>
-      </div>
+      <Menu isMenuOpen={isMenuOpen} menuClose={menuClose} />
+      <Header isMenuOpen={isMenuOpen} menuToggle={menuToggle} contacts={contacts} />
+      <Main />
+      <About />
+      <Experience />
+      <Projects />
+      <Contacts contacts={contacts} />
+      <Footer />
     </>
   )
 }
