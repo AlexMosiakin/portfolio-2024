@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 3.33lvw 3.33lvw 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     opacity: 0;
     display: none;
@@ -20,5 +20,10 @@
     .header-actions {
         display: flex;
         align-items: center;
+    }
+
+
+    .menu-icon {
+        width: max(2.19lvw, 32px);
     }
 }

@@ -60,15 +60,15 @@ export const Experience = () => {
           like Coca-Cola, L'Oreal, Philips etc.
         </p>
         <div className='experience-text-wrapper_skills'>
-          <Button style={{ fontSize: '2.4lvw' }} content={'React'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Typescript'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Html'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Css'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Vanilla js'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Node'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Webpack'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Vite'} action={() => { }} />
-          <Button style={{ fontSize: '2.4lvw' }} content={'Git'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'React'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Typescript'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Html'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Css'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vanilla js'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Node'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Webpack'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vite'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Git'} action={() => { }} />
         </div>
       </div>
       <div className='experience-image-banner' ref={bannerRef}>

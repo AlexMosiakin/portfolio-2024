@@ -7,7 +7,7 @@ import { Experience } from './modules/Experience/Experience'
 import { Projects } from './modules/Projects/Projects'
 import { Footer } from './modules/Footer/Footer'
 import { Contacts } from './modules/Contacts/Contacts'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Menu } from './modules/Menu/Menu'
 
 function App() {
@@ -19,12 +19,6 @@ function App() {
 
   const menuToggle = () => setIsMenuOpen(!isMenuOpen)
   const menuClose = () => setIsMenuOpen(false)
-
-  useEffect(() => {
-    if (body) {
-      isMenuOpen ? body.classList.add('stopScroll') : body.classList.remove('stopScroll')
-    }
-  }, [isMenuOpen, body])
 
   window.addEventListener('unload', function (_e) {
     window.scrollTo(0, 0)

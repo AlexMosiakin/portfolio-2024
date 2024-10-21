@@ -2,25 +2,34 @@
   &_card-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.163lvw;
+    gap: max(1.163lvw, 17px);
 
     &_item {
-      background: #F7F7F7;
-      border-radius: 1.63lvw;
-      padding: 1.63lvw;
+      background: #fff;
+      border-radius: max(1.63lvw, 17px);
+      padding: max(1.63lvw, 38px);
       height: 100%;
       border: 3px solid #1A1C22;
 
       h2 {
         margin: 0 0 15.2lvw 0;
-        font-size: 4.4lvw;
+        font-size: max(4.4lvw, 38px);
       }
 
       p {
         margin: 0;
         font-weight: bold;
-        font-size: 2.33lvw;
+        font-size: max(2.33lvw, 14px);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    &_card-wrapper {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

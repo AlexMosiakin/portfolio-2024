@@ -39,14 +39,14 @@
 
   .content-title {
     font-family: "Bungee Shade", sans-serif;
-    font-size: 10lvw;
-    line-height: 10lvw;
+    font-size: max(10lvw, 70px);
+    line-height: max(10lvw, 70px);
     margin: 0;
   }
 
   .content-subtitle {
     font-weight: bold;
-    font-size: 2.15lvw;
+    font-size: max(2.15lvw, 15px);
     margin: 0;
   }
 

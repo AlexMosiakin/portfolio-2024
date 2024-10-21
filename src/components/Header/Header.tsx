@@ -25,7 +25,11 @@ export const Header: React.FC<IHeader> = ({
             <div className='header-actions'>
                 <Button theme={isMenuOpen ? 'light' : 'dark'} content={'Contact me'} action={onContactMeClick} />
             </div>
-            <Button theme={isMenuOpen ? 'light' : 'dark'} content={<img src={isMenuOpen ? crossIcon : menuIcon} alt='menu' />} action={menuToggle} />
+            <Button
+                theme={isMenuOpen ? 'light' : 'dark'}
+                content={<img className='menu-icon' src={isMenuOpen ? crossIcon : menuIcon} alt='menu' />}
+                action={menuToggle}
+            />
         </div>
     )
 }

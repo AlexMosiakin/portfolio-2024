@@ -1,12 +1,12 @@
 .button {
-    padding: 0.5lvw;
+    padding: max(0.5lvw, 10px);
     border-radius: 8px;
     background: transparent;
-    font-size: 1.5lvw;
+    font-size: max(1.5lvw, 14px);
     font-weight: bold;
     cursor: none;
-    min-height: 4.3lvw;
-    min-width: 4.3lvw;
+    min-height: max(4.3lvw, 52px);
+    min-width: max(4.3lvw, 52px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,6 +15,7 @@
     &.dark {
         color: #1A1C22;
         border: 3px solid #1A1C22;
+        background: #f7f7f7;
 
         &:hover {
             box-shadow: -3px 4px 0 2px #1A1C22;
