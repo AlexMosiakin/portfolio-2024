@@ -41,9 +41,23 @@
         width: 100%;
         height: 100%;
         border: 3px solid #1A1C22;
-        border-radius: 1.16lvw;
+        border-radius: max(1.16lvw, 17px);
         padding: 3.33lvw;
       }
     }
   }
+}
+
+@media screen and (max-width: 768px) {
+  .contacts-section {
+    min-height: 80lvh;
+    height: 80lvh;
+
+    .contacts-grid {
+      .contacts-image-wrapper {
+        display: none;
+      }
+    }
+  }
+
 }

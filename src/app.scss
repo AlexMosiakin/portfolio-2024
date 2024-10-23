@@ -43,3 +43,14 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+
+  .container {
+    height: auto;
+    min-height: 100lvh;
+  }
+}

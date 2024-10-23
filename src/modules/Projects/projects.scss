@@ -69,3 +69,11 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .projects-section {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

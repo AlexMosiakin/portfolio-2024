@@ -23,13 +23,13 @@ export const BrickWall = () => {
             scene = new THREE.Scene();
 
             // Camera is moved back so the whole wall fits into the view
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera = new THREE.PerspectiveCamera(75, window.outerWidth / window.outerHeight, 0.1, 1000);
             camera.position.x = -0.5;  // Adjusted distance to fit the entire wall
             camera.position.y = 0;  // Adjusted distance to fit the entire wall
             camera.position.z = 9;  // Adjusted distance to fit the entire wall
 
             renderer = new THREE.WebGLRenderer({ alpha: true, canvas: canvasRef.current as HTMLCanvasElement, });
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setSize(window.outerWidth, window.outerHeight);
 
             // Cannon.js world
             world = new CANNON.World();
@@ -43,11 +43,11 @@ export const BrickWall = () => {
         //resize
         window.addEventListener('resize', () => {
             // Update camera aspect ratio first
-            camera.aspect = window.innerWidth / window.innerHeight
+            camera.aspect = window.outerWidth / window.outerHeight
             // Then update the projection matrix
             camera.updateProjectionMatrix()
 
-            renderer.setSize(window.innerWidth, window.innerHeight)
+            renderer.setSize(window.outerWidth, window.outerHeight)
         })
 
         // Animate the scene
