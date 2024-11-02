@@ -55,8 +55,8 @@ export const Menu: React.FC<IMenu> = ({
                 action={menuClose}
                 style={{
                     position: 'fixed',
-                    top: '3.33lvw',
-                    right: '3.33lvw',
+                    top: 'max(3.33lvw, 30px)',
+                    right: 'max(3.33lvw, 30px)',
                 }}
             />
             <ul className='menuWrapper-items'>

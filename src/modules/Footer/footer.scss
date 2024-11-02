@@ -1,8 +1,8 @@
 .footer-wrapper {
     background: #1A1C22;
-    padding: 3.33lvw;
+    padding: max(3.33lvw, 30px);
     color: #F7F7F7;
-    font-size: 1.67lvw;
+    font-size: max(1.67lvw, 14px);
   
     .footer-header {
       display: flex;
@@ -37,4 +37,21 @@
     .footer-copyright {
       margin: 8.4lvw 0 0 0;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-wrapper {
+  
+      .footer-header {
+        flex-direction: column;
+        gap: 8.4lvw;
+  
+        .footer-nav {
+          ul {
+            gap: 1.25rem;
+          }
+        }
+      }
+    }
+    
   }
