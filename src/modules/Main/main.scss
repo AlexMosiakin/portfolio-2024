@@ -15,17 +15,17 @@
       font-family: "Bungee", sans-serif;
       font-size: 10lvw;
       line-height: 10lvw;
-      text-shadow: 4px 19px 28px #1A1C22;
+      text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #1A1C22;
       cursor: none;
       margin: 0;
       transition: all 0.3s ease;
 
       &:hover {
-        text-shadow: 4px 19px 28px #f7f7f781;
+        text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #f7f7f781;
       }
 
       &:active {
-        text-shadow: 4px 19px 28px #580EF6;
+        text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #580EF6;
       }
     }
   }

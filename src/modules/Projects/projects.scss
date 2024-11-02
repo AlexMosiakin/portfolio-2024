@@ -9,7 +9,7 @@
 
     .projects-item {
       position: relative;
-      border-radius: 16px;
+      border-radius: max(0.83lvw, 8px);
       overflow: hidden;
       cursor: none;
 
@@ -34,6 +34,7 @@
         display: block;
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
 
       p {
@@ -47,7 +48,7 @@
         margin: 0;
         z-index: 1;
         transition: all 0.3s ease;
-        text-shadow: -4px 4px 0px #1A1C22;
+        text-shadow: min(-0.21lvw, -4px) max(0.21lvw, 4px) 0 #1A1C22;
       }
 
 

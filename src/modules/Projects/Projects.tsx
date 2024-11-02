@@ -70,9 +70,9 @@ export const Projects = () => {
   return (
     <section className='container projects-section'>
       <div className='projects-grid'>
-        {projects.map((project, index) =>
-          <a className='projects-item' href={project.link} target='_blank'>
-            <div key={index} ref={project.ref}>
+        {projects.map((project) =>
+          <a key={project.title} className='projects-item' href={project.link} target='_blank'>
+            <div ref={project.ref}>
               <p>{project.title}</p>
               <img src={project.image} alt={project.title} />
             </div>

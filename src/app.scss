@@ -30,7 +30,7 @@
   rotate: -15deg;
 
   >* {
-    width: 30px;
+    width: max(1.6lvw, 30px);
     object-fit: contain;
   }
 

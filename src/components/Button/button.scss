@@ -1,6 +1,6 @@
 .button {
     padding: max(0.5lvw, 10px);
-    border-radius: 8px;
+    border-radius: max(0.416lvw, 8px);
     background: transparent;
     font-size: max(1.5lvw, 14px);
     font-weight: bold;
@@ -14,31 +14,31 @@
 
     &.dark {
         color: #1A1C22;
-        border: 3px solid #1A1C22;
+        border: max(0.16lvw, 3px) solid #1A1C22;
         background: #f7f7f7;
 
         &:hover {
-            box-shadow: -3px 4px 0 2px #1A1C22;
+            box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #1A1C22;
 
         }
 
         &:active {
-            box-shadow: -3px 4px 0 2px #580EF6;
+            box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #580EF6;
         }
     }
 
     &.light {
         color: #f7f7f7;
         background: #1A1C22;
-        border: 3px solid #f7f7f7;
+        border: max(0.16lvw, 3px) solid #f7f7f7;
 
         &:hover {
-            box-shadow: -3px 4px 0 2px #f7f7f7;
+            box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #f7f7f7;
 
         }
 
         &:active {
-            box-shadow: -3px 4px 0 2px #580EF6;
+            box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #580EF6;
         }
     }
 }

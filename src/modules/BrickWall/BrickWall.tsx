@@ -16,6 +16,8 @@ export const BrickWall = () => {
         let world: CANNON.World, bricks: { mesh: THREE.Mesh, body: CANNON.Body }[] = [];
         let helloDiv = document.querySelector('.content-hello') as HTMLHtmlElement;
         let ball: TBAll  // Invisible ball to smash the wall
+        let frameCount = 0;
+        const targetFPS = 60;
 
 
         // Initialize Three.js scene
@@ -23,13 +25,14 @@ export const BrickWall = () => {
             scene = new THREE.Scene();
 
             // Camera is moved back so the whole wall fits into the view
-            camera = new THREE.PerspectiveCamera(75, window.outerWidth / window.outerHeight, 0.1, 1000);
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.x = -0.5;  // Adjusted distance to fit the entire wall
             camera.position.y = 0;  // Adjusted distance to fit the entire wall
             camera.position.z = 9;  // Adjusted distance to fit the entire wall
 
             renderer = new THREE.WebGLRenderer({ alpha: true, canvas: canvasRef.current as HTMLCanvasElement, });
-            renderer.setSize(window.outerWidth, window.outerHeight);
+            renderer.shadowMap.enabled = false;
+            renderer.setSize(window.innerWidth, window.innerHeight);
 
             // Cannon.js world
             world = new CANNON.World();
@@ -43,17 +46,19 @@ export const BrickWall = () => {
         //resize
         window.addEventListener('resize', () => {
             // Update camera aspect ratio first
-            camera.aspect = window.outerWidth / window.outerHeight
+            camera.aspect = window.innerWidth / window.innerHeight
             // Then update the projection matrix
             camera.updateProjectionMatrix()
 
-            renderer.setSize(window.outerWidth, window.outerHeight)
+            renderer.setSize(window.innerWidth, window.innerHeight)
         })
 
         // Animate the scene
         function animate() {
             requestAnimationFrame(animate);
-            world.step(1 / 60);
+            if (frameCount % (60 / targetFPS) === 0) {
+                world.step(1 / targetFPS);
+            }
 
             // Update brick positions
             bricks.forEach(brick => {
@@ -66,7 +71,10 @@ export const BrickWall = () => {
                 ball.position.copy(ball.body.position);
             }
 
-            renderer?.render(scene, camera);
+            if (frameCount % (60 / targetFPS) === 0) {
+                renderer?.render(scene, camera);
+            }
+            frameCount++;
         }
 
         // Shoot the ball towards the wall

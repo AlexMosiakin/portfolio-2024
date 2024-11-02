@@ -6,29 +6,37 @@
     z-index: 2;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    list-style-type: none;
     transition: all 0.3s ease;
 
-    >li {
-        color: #F7F7F7;
-        font-family: "Bungee", sans-serif;
-        font-size: max(4.4lvw, 36px);
-        line-height: 150%;
-        cursor: none;
-        margin: 0;
-        transition: all 0.3s ease;
-        text-shadow: 4px 19px 28px #1A1C22;
+    .close-icon {
+        width: max(2.19lvw, 32px);
+    }
 
-        &:hover {
-            text-shadow: 4px 19px 28px #f7f7f781;
-        }
+    &-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+        height: 100%;
 
-        &:active {
-            text-shadow: 4px 19px 28px #580EF6;
+        >li {
+            color: #F7F7F7;
+            font-family: "Bungee", sans-serif;
+            font-size: max(4.4lvw, 36px);
+            line-height: 150%;
+            cursor: none;
+            margin: 0;
+            transition: all 0.3s ease;
+            text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #1A1C22;
+
+            &:hover {
+                text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #f7f7f781;
+            }
+
+            &:active {
+                text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #580EF6;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import './menu.scss'
+import { Button } from '../../components/Button/Button'
+import crossIcon from '../../assets/crossIcon.svg';
 
 interface IMenu {
     isMenuOpen: boolean
@@ -41,21 +43,33 @@ export const Menu: React.FC<IMenu> = ({
     }
 
     return (
-        <ul
+        <div
             className='menuWrapper'
             style={{
                 opacity: isMenuOpen ? 1 : 0,
                 pointerEvents: isMenuOpen ? 'all' : 'none',
             }}
         >
-            {menuItems.map((item) => (
-                <li
-                    key={item.title}
-                    onClick={() => onLinkClick(item.elementClassName)}
-                >
-                    {item.title}
-                </li>
-            ))}
-        </ul>
+            <Button
+                content={<img className='close-icon' src={crossIcon} alt='menu' />}
+                action={menuClose}
+                style={{
+                    position: 'fixed',
+                    top: '3.33lvw',
+                    right: '3.33lvw',
+                }}
+            />
+            <ul className='menuWrapper-items'>
+                {menuItems.map((item) => (
+                    <li
+                        key={item.title}
+                        onClick={() => onLinkClick(item.elementClassName)}
+                    >
+                        {item.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
+
     )
 }

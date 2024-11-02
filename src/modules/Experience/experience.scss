@@ -44,7 +44,7 @@
 
       margin: 0;
       padding: 0.586lvw 1.63lvw;
-      border: 3px solid #1A1C22;
+      border: max(0.16lvw, 3px) solid #1A1C22;
       border-radius: 2.63vw;
       font-weight: bold;
       min-height: max(4.3lvw, 52px);
@@ -92,7 +92,7 @@
       flex-direction: column;
       border-radius: max(1.63lvw, 17px);
       padding: max(1.63lvw, 38px);
-      border: 3px solid #fff;
+      border: max(0.16lvw, 3px) solid #fff;
       margin-bottom: max(1.63lvw, 38px);
 
       p {

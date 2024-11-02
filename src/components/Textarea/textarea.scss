@@ -1,8 +1,8 @@
 .textarea {
     padding: max(0.5lvw, 10px);
-    border-radius: 8px;
+    border-radius: max(0.416lvw, 8px);
     background: transparent;
-    border: 3px solid #1A1C22;
+    border: max(0.16lvw, 3px) solid #1A1C22;
     color: #1A1C22;
     font-size: max(1.5lvw, 14px);
     font-weight: bold;
@@ -21,10 +21,11 @@
     }
 
     &:hover {
-        box-shadow: -3px 4px 0 2px #1A1C22;
+        box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #1A1C22;
     }
 
-    &:active, &:focus {
-        box-shadow: -3px 4px 0 2px #580EF6;
+    &:active,
+    &:focus {
+        box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #580EF6;
     }
 }
