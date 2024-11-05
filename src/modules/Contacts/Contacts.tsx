@@ -5,6 +5,7 @@ import { Textarea } from '../../components/Textarea/Textarea'
 import './contacts.scss'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import emailjs from '@emailjs/browser';
 gsap.registerPlugin(ScrollTrigger);
 
 interface IContacts {
@@ -28,6 +29,32 @@ export const Contacts: React.FC<IContacts> = ({
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [details, setDetails] = useState('')
+    const [isFormLoading, setIsFormLoading] = useState(false)
+
+    const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        setIsFormLoading(true)
+        e.preventDefault()
+
+        emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, {
+            name,
+            email,
+            details
+        }, {
+            publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }).then(
+            (response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                setName('')
+                setEmail('')
+                setDetails('')
+            },
+            (err) => {
+                console.log('FAILED...', err);
+            },
+        ).finally(() => {
+            setIsFormLoading(false)
+        })
+    }
 
     useLayoutEffect(() => {
         const form = contactForm.current;
@@ -84,7 +111,7 @@ export const Contacts: React.FC<IContacts> = ({
                 <div className='contacts-form-wrapper' ref={contactForm}>
                     <form
                         className='contacts-form'
-                        action={`mailto:aleksandrmosiakin@gmail.com?subject=New project from ${name}&body=${details}`}
+                        onSubmit={onFormSubmit}
                     >
                         <Input
                             value={name}
@@ -104,7 +131,7 @@ export const Contacts: React.FC<IContacts> = ({
                             style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Project details'
                         />
-                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} action={() => { }} />
+                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} disabled={isFormLoading} />
                     </form>
                 </div>
             </div>

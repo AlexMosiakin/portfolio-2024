@@ -8,6 +8,7 @@ interface IButton {
   style?: React.CSSProperties;
   type?: 'button' | 'link'
   href?: string
+  disabled?: boolean
 }
 
 export const Button: React.FC<IButton> = ({
@@ -17,11 +18,12 @@ export const Button: React.FC<IButton> = ({
   style,
   type,
   href,
+  disabled,
 }) => {
   switch (type) {
     case 'link':
       return <a className={`button ${theme}`} style={style} href={href} target='_blank'>{content}</a>
     default:
-      return <button className={`button ${theme}`} style={style} onClick={action}>{content}</button>
+      return <button className={`button ${theme}`} style={style} onClick={action} disabled={disabled}>{content}</button>
   }
 }
