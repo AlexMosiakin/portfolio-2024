@@ -60,15 +60,15 @@ export const Experience = () => {
           like Coca-Cola, L'Oreal, Philips etc.
         </p>
         <div className='experience-text-wrapper_skills'>
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'React'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Typescript'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Html'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Css'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vanilla js'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Node'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Webpack'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vite'} action={() => { }} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Git'} action={() => { }} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'React'} type={'link'} href={'https://react.dev'} />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Typescript'} type={'link'}  href={'https://www.typescriptlang.org'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Html'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/HTML'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Css'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/CSS'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'JavaScript'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/JavaScript'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Node'} type={'link'}  href={'https://nodejs.org'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Webpack'} type={'link'}  href={'https://webpack.js.org'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vite'} type={'link'}  href={'https://vite.dev'}  />
+          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Git'} type={'link'}  href={'https://git-scm.com'}  />
         </div>
       </div>
       <div className='experience-image-banner' ref={bannerRef}>

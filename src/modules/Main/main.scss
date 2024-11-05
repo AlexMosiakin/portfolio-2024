@@ -13,8 +13,8 @@
     .content-hello {
       color: #F7F7F7;
       font-family: "Bungee", sans-serif;
-      font-size: 10lvw;
-      line-height: 10lvw;
+      font-size: max(10lvw, 70px);
+      line-height: max(10lvw, 70px);
       text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #1A1C22;
       cursor: none;
       margin: 0;
@@ -46,7 +46,7 @@
 
   .content-subtitle {
     font-weight: bold;
-    font-size: max(2.15lvw, 15px);
+    font-size: max(2.15lvw, 14px);
     margin: 0;
   }
 

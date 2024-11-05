@@ -5,14 +5,14 @@ export const Footer = () => {
     <footer className='footer-wrapper'>
         <div className='footer-header'>
           <p className='footer-name'>ALEX MOSS</p>
-          <nav className='footer-nav'>
+          {/* <nav className='footer-nav'>
             <ul>
               <li>About</li>
               <li>Experience</li>
               <li>Cases</li>
               <li>Contacts</li>
             </ul>
-          </nav>
+          </nav> */}
         </div>
         <p className='footer-copyright'>© 2024 Alex Moss. All rights reserved.</p>
       </footer>

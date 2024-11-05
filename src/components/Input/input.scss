@@ -4,7 +4,7 @@
     background: transparent;
     border: max(0.16lvw, 3px) solid #1A1C22;
     color: #1A1C22;
-    font-size: max(1.5lvw, 14px);
+    font-size: max(1.5lvw, 18px);
     font-weight: bold;
     cursor: none;
     height: max(4.3lvw, 52px);
@@ -17,7 +17,7 @@
     &::placeholder {
         color: #1A1C22;
         font-weight: bold;
-        font-size: max(1.5lvw, 14px);
+        font-size: max(1.5lvw, 18px);
     }
 
     &:hover {

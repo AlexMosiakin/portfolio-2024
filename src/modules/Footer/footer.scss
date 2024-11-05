@@ -12,6 +12,7 @@
       .footer-name {
         font-weight: bold;
         margin: 0;
+        font-size: max(1.67lvw, 18px)
       }
   
       .footer-nav {
@@ -40,18 +41,18 @@
   }
 
   @media screen and (max-width: 768px) {
-    .footer-wrapper {
+    // .footer-wrapper {
   
-      .footer-header {
-        flex-direction: column;
-        gap: 8.4lvw;
+    //   .footer-header {
+    //     flex-direction: column;
+    //     gap: 8.4lvw;
   
-        .footer-nav {
-          ul {
-            gap: 1.25rem;
-          }
-        }
-      }
-    }
+    //     .footer-nav {
+    //       ul {
+    //         gap: 1.25rem;
+    //       }
+    //     }
+    //   }
+    // }
     
   }
