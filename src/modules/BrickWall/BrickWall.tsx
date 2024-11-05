@@ -25,7 +25,7 @@ export const BrickWall = () => {
             scene = new THREE.Scene();
 
             // Camera is moved back so the whole wall fits into the view
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.x = -0.5;  // Adjusted distance to fit the entire wall
             camera.position.y = 0;  // Adjusted distance to fit the entire wall
             camera.position.z = 9;  // Adjusted distance to fit the entire wall
