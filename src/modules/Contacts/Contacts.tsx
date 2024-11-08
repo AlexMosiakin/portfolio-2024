@@ -6,6 +6,7 @@ import './contacts.scss'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify'
 gsap.registerPlugin(ScrollTrigger);
 
 interface IContacts {
@@ -15,7 +16,6 @@ interface IContacts {
 export const Contacts: React.FC<IContacts> = ({
     contacts,
 }) => {
-
     const planeImage = useRef<HTMLImageElement>(null)
     const contactForm = useRef(null);
 
@@ -26,34 +26,41 @@ export const Contacts: React.FC<IContacts> = ({
         }
     })
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [details, setDetails] = useState('')
+    const [name, setName] = useState<string>()
+    const [email, setEmail] = useState<string>()
+    const [details, setDetails] = useState<string>()
     const [isFormLoading, setIsFormLoading] = useState(false)
 
+    const isFormFilled = !!name?.length && !!email?.length && !!details?.length
+
     const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        setIsFormLoading(true)
         e.preventDefault()
 
-        emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, {
-            name,
-            email,
-            details
-        }, {
-            publicKey: import.meta.env.VITE_PUBLIC_KEY,
-        }).then(
-            (response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                setName('')
-                setEmail('')
-                setDetails('')
-            },
-            (err) => {
-                console.log('FAILED...', err);
-            },
-        ).finally(() => {
-            setIsFormLoading(false)
-        })
+        if (isFormFilled) {
+            setIsFormLoading(true)
+
+            emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, {
+                name,
+                email,
+                details
+            }, {
+                publicKey: import.meta.env.VITE_PUBLIC_KEY,
+            }).then(
+                () => {
+                    toast("Message was send successfully!", { type: 'success' })
+                    setName('')
+                    setEmail('')
+                    setDetails('')
+                },
+                () => {
+                    toast("Something went wrong, try again later!", { type: 'error' })
+                },
+            ).finally(() => {
+                setIsFormLoading(false)
+            })
+        } else {
+            toast("Please fill all the fields!", { type: 'error' })
+        }
     }
 
     useLayoutEffect(() => {
@@ -131,7 +138,7 @@ export const Contacts: React.FC<IContacts> = ({
                             style={{ width: '100%', marginBottom: '1.69lvw' }}
                             placeholder='Project details'
                         />
-                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} disabled={isFormLoading} />
+                        <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} loading={isFormLoading} />
                     </form>
                 </div>
             </div>

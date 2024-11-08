@@ -42,4 +42,20 @@
             box-shadow: min(-0.16lvw, -3px) max(0.21lvw, 4px) 0 max(0.105lvw, 2px) #580EF6;
         }
     }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loader {
+        animation: spin 2s linear infinite;
+    }
+
+
 }

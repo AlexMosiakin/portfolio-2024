@@ -1,4 +1,5 @@
 import React from 'react'
+import loaderIcon from '../../assets/loader.svg'
 import './button.scss'
 
 interface IButton {
@@ -9,6 +10,7 @@ interface IButton {
   type?: 'button' | 'link'
   href?: string
   disabled?: boolean
+  loading?: boolean
 }
 
 export const Button: React.FC<IButton> = ({
@@ -19,11 +21,22 @@ export const Button: React.FC<IButton> = ({
   type,
   href,
   disabled,
+  loading,
 }) => {
   switch (type) {
     case 'link':
       return <a className={`button ${theme}`} style={style} href={href} target='_blank'>{content}</a>
     default:
-      return <button className={`button ${theme}`} style={style} onClick={action} disabled={disabled}>{content}</button>
+      return <button
+        className={`button ${theme}`}
+        style={style} onClick={action}
+        disabled={disabled}
+      >
+        {
+          loading ?
+            <img className='loader' src={loaderIcon} alt="loaderIcon" /> :
+            content
+        }
+      </button>
   }
 }
