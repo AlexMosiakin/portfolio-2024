@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
+    will-change: opacity;
 
     .close-icon {
         width: max(2.19lvw, 32px);
@@ -19,6 +20,7 @@
         flex-direction: column;
         list-style-type: none;
         height: 100%;
+        padding: 0;
 
         >li {
             color: #F7F7F7;

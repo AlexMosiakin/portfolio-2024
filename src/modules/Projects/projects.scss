@@ -12,22 +12,19 @@
       border-radius: max(0.83lvw, 8px);
       overflow: hidden;
       cursor: none;
+      width: 100%;
+      height: 100%;
 
-      div {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.3);
-          z-index: 0;
-          transition: all 0.3s ease;
-        }
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 0;
+        transition: all 0.3s ease;
       }
 
       img {

@@ -9,6 +9,7 @@
     padding: max(1.63lvw, 38px);
     display: flex;
     justify-content: space-between;
+    will-change: opacity, transform;
 
     p {
       width: 35%;
@@ -31,6 +32,7 @@
     position: relative;
     width: 100lvw;
     height: max(6.66lvw, 52px);
+    will-change: opacity, transform;
   }
 
   .experience-image-wrapper {

@@ -71,11 +71,9 @@ export const Projects = () => {
     <section className='container projects-section'>
       <div className='projects-grid'>
         {projects.map((project) =>
-          <a key={project.title} className='projects-item' href={project.link} target='_blank'>
-            <div ref={project.ref}>
-              <p>{project.title}</p>
-              <img src={project.image} alt={project.title} />
-            </div>
+          <a key={project.title} className='projects-item' href={project.link} target='_blank' ref={project.ref}>
+            <p>{project.title}</p>
+            <img src={project.image} alt={project.title} />
           </a>
         )}
       </div>

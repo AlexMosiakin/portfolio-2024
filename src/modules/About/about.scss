@@ -10,6 +10,7 @@
       padding: max(1.63lvw, 38px);
       height: 100%;
       border: max(0.16lvw, 3px) solid #1A1C22;
+      will-change: opacity, transform;
 
       h2 {
         margin: 0 0 15.2lvw 0;

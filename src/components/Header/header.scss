@@ -8,6 +8,7 @@
     opacity: 0;
     display: none;
     z-index: 1;
+    will-change: opacity, display;
 
     .logo {
         cursor: none;

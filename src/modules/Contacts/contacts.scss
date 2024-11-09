@@ -24,17 +24,20 @@
         height: 26.65lvw;
         transform: translate(-50%, -50%);
         position: absolute;
+        will-change: top, left;
       }
 
       .contacts-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
-
+        will-change: clip-path;
       }
     }
 
     .contacts-form-wrapper {
+      will-change: transform, opacity;
+
       .contacts-form {
         display: flex;
         flex-direction: column;

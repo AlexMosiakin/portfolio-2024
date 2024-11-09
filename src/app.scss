@@ -28,6 +28,7 @@
   pointer-events: none;
   z-index: 9;
   rotate: -15deg;
+  will-change: translate, rotate;
 
   >* {
     width: max(1.6lvw, 30px);

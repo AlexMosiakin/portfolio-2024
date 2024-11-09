@@ -18,7 +18,13 @@ export const BrickWall = () => {
         let ball: TBAll  // Invisible ball to smash the wall
         let frameCount = 0;
         const targetFPS = 60;
+        let groundBody = new CANNON.Body({ mass: 0 });
 
+
+        let collisionWithGroundSet = new Set()
+        groundBody.addEventListener("collide", (e: any) => {
+            collisionWithGroundSet.add(e?.body?.id)
+        });
 
         // Initialize Three.js scene
         function init() {
@@ -38,7 +44,7 @@ export const BrickWall = () => {
             world = new CANNON.World();
             world.gravity.set(0, -9, 0);
 
-            createGround(world, scene);
+            createGround(world, scene, groundBody);
             createWall(bricks, world, scene);
             ball = createBall(ball, world, scene);  // Create invisible ball to destroy the wall
         }
@@ -56,6 +62,11 @@ export const BrickWall = () => {
         // Animate the scene
         function animate() {
             requestAnimationFrame(animate);
+
+            if (collisionWithGroundSet.size === 320) {
+                bricks.forEach((brick) => brick.body.sleep())
+            }
+
             if (frameCount % (60 / targetFPS) === 0) {
                 world.step(1 / targetFPS);
             }
@@ -92,6 +103,10 @@ export const BrickWall = () => {
                 gsap.to('.content-subtitle', { display: "block", opacity: 1, duration: 1 });
                 gsap.to('.content-title', { display: "block", opacity: 1, duration: 1 });
                 gsap.to('body', { overflowY: "scroll", duration: 1 });
+
+                if (ball.body && bricks.length) {
+                    ball.body.sleep()
+                }
             }, 2000);
         }
 
