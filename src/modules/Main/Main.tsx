@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { BrickWall } from '../BrickWall/BrickWall'
 import gsap from 'gsap';
 import './main.scss'
@@ -6,20 +6,30 @@ import './main.scss'
 export const Main = () => {
 
     const helloDivRef = useRef(null);
-    useLayoutEffect(() => {
-        const helloDiv = helloDivRef.current;
+    const [webFontsLoaded, setWebFontsLoaded] = useState(false)
 
-        gsap.fromTo(
-            helloDiv,
-            {
-                clipPath: 'rect(0% -50% 100% 0%)',
-            },
-            {
-                clipPath: 'rect(-50% 150% 150% -50%)',
-                duration: 1,
-            }
-        );
-    }, []);
+    useLayoutEffect(() => {
+        async function areFontsReady() {
+            await (document as any).fonts.ready
+            setWebFontsLoaded(true)
+        }
+
+        areFontsReady()
+    }, [])
+
+    useLayoutEffect(() => {
+        if (webFontsLoaded) {
+            const helloDiv = helloDivRef.current;
+
+            gsap.to(
+                helloDiv,
+                {
+                    clipPath: 'rect(-50% 150% 150% -50%)',
+                    duration: 1,
+                }
+            );
+        }
+    }, [webFontsLoaded]);
 
     return (
         <section className='container main-section'>

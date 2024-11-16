@@ -9,6 +9,7 @@
 
   .content-hello-wrapper {
     position: relative;
+    clip-path: rect(0% -50% 100% 0%);
 
     .content-hello {
       will-change: opacity, text-shadow, clip-path;
