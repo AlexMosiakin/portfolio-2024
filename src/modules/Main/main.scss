@@ -11,7 +11,7 @@
     position: relative;
 
     .content-hello {
-      will-change: opacity, text-shadow;
+      will-change: opacity, text-shadow, clip-path;
       color: #F7F7F7;
       font-family: "Bungee", sans-serif;
       font-size: max(10lvw, 70px);
@@ -29,14 +29,24 @@
         text-shadow: max(0.21lvw, 4px) max(1lvw, 19px) max(1.46lvw, 28px) #580EF6;
       }
     }
+
+    .subcontent-hello {
+      color: #F7F7F7;
+      text-align: center;
+      font-size: max(1.67lvw, 14px);
+      line-height: max(1.67lvw, 14px);
+      margin: max(24px) 0 0 0;
+      font-weight: bold;
+    }
   }
 
 
   .content-title,
   .content-subtitle {
-    will-change: opacity, display;
-    display: none;
+    will-change: opacity, visibility, height;
+    visibility: hidden;
     opacity: 0;
+    height: 0;
   }
 
   .content-title {

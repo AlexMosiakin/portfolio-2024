@@ -6,9 +6,10 @@
     position: fixed;
     width: 100%;
     opacity: 0;
-    display: none;
+    visibility: hidden;
     z-index: 1;
-    will-change: opacity, display;
+    will-change: opacity, visibility;
+    height: 0;
 
     .logo {
         cursor: none;

@@ -78,7 +78,7 @@ export const Contacts: React.FC<IContacts> = ({
                     duration: 0.5,
                     scrollTrigger: {
                         trigger: plane,
-                        start: 'top 50%',
+                        start: 'top 75%',
                     },
                 }
             );
@@ -96,7 +96,7 @@ export const Contacts: React.FC<IContacts> = ({
                 duration: 0.5,
                 scrollTrigger: {
                     trigger: plane,
-                    start: 'top 50%',
+                    start: 'top 75%',
                 },
             }
         );

@@ -33,7 +33,7 @@ export const Projects = () => {
           delay: 0.3 * index,
           scrollTrigger: {
             trigger: otkisRef.current,
-            start: 'top 50%',
+            start: 'top 75%',
           },
         }
       );

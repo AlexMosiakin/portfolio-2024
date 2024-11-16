@@ -29,7 +29,7 @@ export const Experience = () => {
         duration: 0.5,
         scrollTrigger: {
           trigger: textElement,
-          start: 'top 50%',
+          start: 'top 75%',
         },
       }
     );
@@ -46,7 +46,7 @@ export const Experience = () => {
         delay: 0.5,
         scrollTrigger: {
           trigger: textElement,
-          start: 'top 50%',
+          start: 'top 75%',
         },
       }
     );

@@ -14,6 +14,7 @@ export const BrickWall = () => {
     useLayoutEffect(() => {
         let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
         let world: CANNON.World, bricks: { mesh: THREE.Mesh, body: CANNON.Body }[] = [];
+        let helloDivWrapper = document.querySelector('.content-hello-wrapper') as HTMLHtmlElement;
         let helloDiv = document.querySelector('.content-hello') as HTMLHtmlElement;
         let ball: TBAll  // Invisible ball to smash the wall
         let frameCount = 0;
@@ -90,7 +91,8 @@ export const BrickWall = () => {
 
         // Shoot the ball towards the wall
         function shootBall() {
-            helloDiv.style.height = '0';
+            helloDivWrapper.style.height = '0';
+            helloDivWrapper.style.visibility = 'hidden';
             // Apply an impulse to the ball to move it forward
             let impulse = new CANNON.Vec3(0, 0, -100);
             if (ball.body) {
@@ -99,9 +101,9 @@ export const BrickWall = () => {
             }
 
             setTimeout(() => {
-                gsap.to('.header-wrapper', { display: "flex", opacity: 1, duration: 1 });
-                gsap.to('.content-subtitle', { display: "block", opacity: 1, duration: 1 });
-                gsap.to('.content-title', { display: "block", opacity: 1, duration: 1 });
+                gsap.to('.header-wrapper', { visibility: "visible", opacity: 1, height: "auto", duration: 1, });
+                gsap.to('.content-subtitle', { visibility: "visible", opacity: 1, height: "auto", duration: 1 });
+                gsap.to('.content-title', { visibility: "visible", opacity: 1, height: "auto", duration: 1 });
                 gsap.to('body', { overflowY: "scroll", duration: 1 });
 
                 if (ball.body && bricks.length) {
@@ -111,9 +113,9 @@ export const BrickWall = () => {
         }
 
         // Start destruction on click
-        helloDiv?.addEventListener('click', () => {
+        helloDivWrapper?.addEventListener('click', () => {
             helloDiv.style.textShadow = '4px 19px 28px #580EF6';
-            gsap.to(helloDiv, { display: "none", opacity: 0, duration: 1, onComplete: shootBall });
+            gsap.to(helloDivWrapper, { opacity: 0, duration: 1, onComplete: shootBall });
         });
         init();
         animate();
