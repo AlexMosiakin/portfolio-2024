@@ -1,0 +1,14 @@
+.link {
+    cursor: none;
+    color: #1A1C22;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration-color: #580EF6;
+    }
+
+    &:focus {
+        color: #580EF6;
+    }
+}

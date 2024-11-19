@@ -7,12 +7,53 @@ import { Button } from '../../components/Button/Button'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useLayoutEffect } from 'react'
+import { Link } from '../../components/Link/Link'
 gsap.registerPlugin(ScrollTrigger);
 
 export const Experience = () => {
 
+  const technologies = [
+    {
+      title: 'React',
+      href: 'https://react.dev',
+    },
+    {
+      title: 'Typescript',
+      href: 'https://www.typescriptlang.org',
+    },
+    {
+      title: 'Html',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    },
+    {
+      title: 'Css',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    },
+    {
+      title: 'JavaScript',
+      href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+      title: 'Node',
+      href: 'https://nodejs.org',
+    },
+    {
+      title: 'Webpack',
+      href: 'https://webpack.js.org',
+    },
+    {
+      title: 'Vite',
+      href: 'https://vite.dev',
+    },
+    {
+      title: 'Git',
+      href: 'https://git-scm.com',
+    }
+  ]
+
   const textRef = useRef(null);
   const bannerRef = useRef(null);
+
   useLayoutEffect(() => {
     const textElement = textRef.current;
     const bannerElement = bannerRef.current;
@@ -56,19 +97,13 @@ export const Experience = () => {
     <section className='container experience-section'>
       <div className='experience-text-wrapper' ref={textRef}>
         <p>
-          Now I am woking with Improvado's SPA, which is used by companies
+          Now I am woking with <Link href="https://improvado.io/" content="Improvado's" target='_blank'/> SPA, which is used by companies
           like Coca-Cola, L'Oreal, Philips etc.
         </p>
         <div className='experience-text-wrapper_skills'>
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'React'} type={'link'} href={'https://react.dev'} />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Typescript'} type={'link'}  href={'https://www.typescriptlang.org'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Html'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/HTML'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Css'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/CSS'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'JavaScript'} type={'link'}  href={'https://developer.mozilla.org/ru/docs/Web/JavaScript'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Node'} type={'link'}  href={'https://nodejs.org'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Webpack'} type={'link'}  href={'https://webpack.js.org'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Vite'} type={'link'}  href={'https://vite.dev'}  />
-          <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={'Git'} type={'link'}  href={'https://git-scm.com'}  />
+          {technologies.map((tech) => (
+            <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={tech.title} type={'link'} href={tech.href} />
+          ))}
         </div>
       </div>
       <div className='experience-image-banner' ref={bannerRef}>
