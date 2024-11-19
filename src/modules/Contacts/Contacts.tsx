@@ -13,6 +13,8 @@ interface IContacts {
     contacts: RefObject<HTMLDivElement>
 }
 
+const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/
+
 export const Contacts: React.FC<IContacts> = ({
     contacts,
 }) => {
@@ -36,31 +38,37 @@ export const Contacts: React.FC<IContacts> = ({
     const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        if (isFormFilled) {
-            setIsFormLoading(true)
-
-            emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, {
-                name,
-                email,
-                details
-            }, {
-                publicKey: import.meta.env.VITE_PUBLIC_KEY,
-            }).then(
-                () => {
-                    toast("Message was send successfully!", { type: 'success' })
-                    setName('')
-                    setEmail('')
-                    setDetails('')
-                },
-                () => {
-                    toast("Something went wrong, try again later!", { type: 'error' })
-                },
-            ).finally(() => {
-                setIsFormLoading(false)
-            })
-        } else {
+        if (!isFormFilled) {
             toast("Please fill all the fields!", { type: 'error' })
+            return
         }
+
+        if(!EMAIL_REGEX.test(email)) {
+            toast("Please enter a valid email!", { type: 'error' })
+            return
+        }
+
+        setIsFormLoading(true)
+
+        emailjs.send(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, {
+            name,
+            email,
+            details
+        }, {
+            publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }).then(
+            () => {
+                toast("Message was send successfully!", { type: 'success' })
+                setName('')
+                setEmail('')
+                setDetails('')
+            },
+            () => {
+                toast("Something went wrong, try again later!", { type: 'error' })
+            },
+        ).finally(() => {
+            setIsFormLoading(false)
+        })
     }
 
     useLayoutEffect(() => {
