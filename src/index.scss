@@ -2,6 +2,10 @@ html {
   cursor: none !important;
 }
 
+html, body {
+  overflow-x:hidden 
+} 
+
 * {
   box-sizing: border-box;
 }

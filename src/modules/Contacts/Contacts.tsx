@@ -43,7 +43,7 @@ export const Contacts: React.FC<IContacts> = ({
             return
         }
 
-        if(!EMAIL_REGEX.test(email)) {
+        if (!EMAIL_REGEX.test(email)) {
             toast("Please enter a valid email!", { type: 'error' })
             return
         }
@@ -131,19 +131,19 @@ export const Contacts: React.FC<IContacts> = ({
                         <Input
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69lvw' }}
+                            style={{ width: '100%', marginBottom: 'max(1.69lvw, 17px)' }}
                             placeholder='Name'
                         />
                         <Input
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69lvw' }}
+                            style={{ width: '100%', marginBottom: 'max(1.69lvw, 17px)' }}
                             placeholder='Email'
                         />
                         <Textarea
                             value={details}
                             onChange={(e) => setDetails(e.target.value)}
-                            style={{ width: '100%', marginBottom: '1.69lvw' }}
+                            style={{ width: '100%', marginBottom: 'max(1.69lvw, 17px)' }}
                             placeholder='Project details'
                         />
                         <Button content='Send' style={{ width: '100%', marginTop: 'auto' }} loading={isFormLoading} />

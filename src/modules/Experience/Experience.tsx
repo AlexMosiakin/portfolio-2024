@@ -18,16 +18,16 @@ export const Experience = () => {
       href: 'https://react.dev',
     },
     {
-      title: 'Typescript',
-      href: 'https://www.typescriptlang.org',
-    },
-    {
       title: 'Html',
       href: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
     },
     {
       title: 'Css',
       href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    },
+    {
+      title: 'Typescript',
+      href: 'https://www.typescriptlang.org',
     },
     {
       title: 'JavaScript',
@@ -102,7 +102,7 @@ export const Experience = () => {
         </p>
         <div className='experience-text-wrapper_skills'>
           {technologies.map((tech) => (
-            <Button style={{ fontSize: 'max(2.4lvw, 32px)' }} content={tech.title} type={'link'} href={tech.href} />
+            <Button style={{ fontSize: 'max(2.4lvw, 24px)' }} content={tech.title} type={'link'} href={tech.href} />
           ))}
         </div>
       </div>
