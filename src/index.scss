@@ -1,10 +1,7 @@
 html {
   cursor: none !important;
+  overflow: hidden;
 }
-
-html, body {
-  overflow-x:hidden 
-} 
 
 * {
   box-sizing: border-box;
@@ -33,8 +30,4 @@ body {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-
-  &.stopScroll {
-    overflow-y: hidden !important;
-  }
 }

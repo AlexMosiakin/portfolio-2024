@@ -3,6 +3,8 @@ import otkis from '../../assets/projects/otkis.png'
 import lina from '../../assets/projects/lina.png'
 import room from '../../assets/projects/room.png'
 import pokeLand from '../../assets/projects/pokeLand.png'
+import weatherApp from '../../assets/projects/weatherApp.png'
+import musicPlayer from '../../assets/projects/musicPlayer.png'
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,6 +16,8 @@ export const Projects = () => {
   const linaRef = useRef(null);
   const roomRef = useRef(null);
   const pokeLandRef = useRef(null);
+  const weatherAppRef = useRef(null);
+  const musicPlayerRef = useRef(null);
 
   useLayoutEffect(() => {
     projects.forEach((project, index) => {
@@ -60,11 +64,23 @@ export const Projects = () => {
       link: 'https://room-alexmosiakin.vercel.app/'
     },
     {
+      ref: weatherAppRef,
+      title: 'Weather App',
+      image: weatherApp,
+      link: 'https://alexmosiakin.github.io/weather-app/'
+    },
+    {
+      ref: musicPlayerRef,
+      title: 'Music Player',
+      image: musicPlayer,
+      link: 'https://alexmosiakin.github.io/music-player/'
+    },
+    {
       ref: pokeLandRef,
       title: 'PokeLand',
       image: pokeLand,
       link: 'https://alexmosiakin.github.io/poke-land/'
-    }
+    },
   ]
 
   return (

@@ -1,5 +1,7 @@
 .projects-section {
-
+  min-height: 100lvh;
+  height: auto;
+  
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
