@@ -3,6 +3,7 @@ import croc from '../../assets/companies/Croc.svg'
 import improvado from '../../assets/companies/Imp.svg'
 import flat12 from '../../assets/companies/Flat12.svg'
 import sber from '../../assets/companies/Sber.svg'
+import solveva from '../../assets/companies/Solveva.svg'
 import { Button } from '../../components/Button/Button'
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,44 +13,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Experience = () => {
 
-  const technologies = [
-    {
-      title: 'React',
-      href: 'https://react.dev',
-    },
-    {
-      title: 'Html',
-      href: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-    },
-    {
-      title: 'Css',
-      href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-    },
-    {
-      title: 'Typescript',
-      href: 'https://www.typescriptlang.org',
-    },
-    {
-      title: 'JavaScript',
-      href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
-    },
-    {
-      title: 'Node',
-      href: 'https://nodejs.org',
-    },
-    {
-      title: 'Webpack',
-      href: 'https://webpack.js.org',
-    },
-    {
-      title: 'Vite',
-      href: 'https://vite.dev',
-    },
-    {
-      title: 'Git',
-      href: 'https://git-scm.com',
-    }
-  ]
+  // const technologies = [
+  //   {
+  //     title: 'React',
+  //     href: 'https://react.dev',
+  //   },
+  //   {
+  //     title: 'Html',
+  //     href: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+  //   },
+  //   {
+  //     title: 'Css',
+  //     href: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+  //   },
+  //   {
+  //     title: 'Typescript',
+  //     href: 'https://www.typescriptlang.org',
+  //   },
+  //   {
+  //     title: 'JavaScript',
+  //     href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  //   },
+  //   {
+  //     title: 'Node',
+  //     href: 'https://nodejs.org',
+  //   },
+  //   {
+  //     title: 'Webpack',
+  //     href: 'https://webpack.js.org',
+  //   },
+  //   {
+  //     title: 'Vite',
+  //     href: 'https://vite.dev',
+  //   },
+  //   {
+  //     title: 'Git',
+  //     href: 'https://git-scm.com',
+  //   }
+  // ]
 
   const textRef = useRef(null);
   const bannerRef = useRef(null);
@@ -97,35 +98,29 @@ export const Experience = () => {
     <section className='container experience-section'>
       <div className='experience-text-wrapper' ref={textRef}>
         <p>
-          Now I am woking with <Link href="https://improvado.io/" content="Improvado's" target='_blank'/> SPA, which is used by companies
-          like Coca-Cola, L'Oreal, Philips etc.
+          Currently, I work at <Link href="https://solveva.com/" content="Solveva" target='_blank'/> on a low-code platform, building UI features and supporting the team as a Scrum Master by improving day-to-day processes.
         </p>
-        <div className='experience-text-wrapper_skills'>
+        <Button style={{ fontSize: 'max(2.4lvw, 24px)' }} content={'Check my CV'} type={'link'} href={'https://docs.google.com/document/d/1GnOkthJBYuxgW940GOikydwO-k4G-K5LcmuK8uoYspU/edit?usp=sharing'} />
+        {/* <div className='experience-text-wrapper_skills'>
           {technologies.map((tech) => (
             <Button style={{ fontSize: 'max(2.4lvw, 24px)' }} content={tech.title} type={'link'} href={tech.href} />
           ))}
-        </div>
+        </div> */}
       </div>
       <div className='experience-image-banner' ref={bannerRef}>
         <div className='experience-image-wrapper first'>
+          <img src={solveva} alt="solveva" />
           <img src={improvado} alt="improvado" />
-          <p>Improvado</p>
           <img src={sber} alt="sber" />
-          <p>Sberbank</p>
           <img src={croc} alt="croc" />
-          <p>Croc</p>
           <img src={flat12} alt="flat12" />
-          <p>Flat12</p>
         </div>
         <div className='experience-image-wrapper second'>
+          <img src={solveva} alt="solveva" />
           <img src={improvado} alt="improvado" />
-          <p>Improvado</p>
           <img src={sber} alt="sber" />
-          <p>Sberbank</p>
           <img src={croc} alt="croc" />
-          <p>Croc</p>
           <img src={flat12} alt="flat12" />
-          <p>Flat12</p>
         </div>
       </div>
     </section>

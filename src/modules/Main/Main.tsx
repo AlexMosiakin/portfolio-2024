@@ -10,7 +10,7 @@ export const Main = () => {
 
     useLayoutEffect(() => {
         async function areFontsReady() {
-            await (document as any).fonts.ready
+            await (document).fonts.ready
             setWebFontsLoaded(true)
         }
 

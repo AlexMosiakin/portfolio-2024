@@ -10,14 +10,15 @@
     display: flex;
     justify-content: space-between;
     will-change: opacity, transform;
+    flex-direction: column;
+    gap: 1.63lvw;
+    align-items: center;
 
     p {
-      width: 35%;
       margin: 0;
     }
 
     &_skills {
-      width: 63%;
       display: flex;
       flex-wrap: wrap;
       gap: max(1.63lvw, 24px);
@@ -38,7 +39,7 @@
   .experience-image-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     width: 100%;
 

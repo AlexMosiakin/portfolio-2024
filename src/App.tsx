@@ -4,7 +4,7 @@ import bgParticles from './assets/bgParticles.png'
 import { Main } from './modules/Main/Main'
 import { About } from './modules/About/About'
 import { Experience } from './modules/Experience/Experience'
-import { Projects } from './modules/Projects/Projects'
+// import { Projects } from './modules/Projects/Projects'
 import { Footer } from './modules/Footer/Footer'
 import { Contacts } from './modules/Contacts/Contacts'
 import { useRef, useState } from 'react'
@@ -22,38 +22,41 @@ function App() {
   const menuOpen = () => setIsMenuOpen(true)
   const menuClose = () => setIsMenuOpen(false)
 
-  window.addEventListener('unload', function (_e) {
+  window.addEventListener('unload', function () {
     window.scrollTo(0, 0)
   });
 
   window.addEventListener('mousemove', (e) => {
-    if (cursor.current && body) {
-
+    const cursorElement = cursor.current
+    
+    if (cursorElement && body) {
       const mouseX = e.pageX;
       const mouseY = e.pageY + body.getBoundingClientRect().top;
 
-      cursor.current.style.translate = `${mouseX - 15}px ${mouseY - 30}px`;
+      cursorElement.style.translate = `${mouseX - 15}px ${mouseY - 30}px`;
     }
   })
 
   window.addEventListener('mousedown', () => {
-    if (cursor.current) {
+    const cursorElement = cursor.current
+    if (cursorElement) {
       const cursorFlows = document.querySelectorAll('.cursorFlow')
       cursorFlows.forEach((flow) => {
         flow.classList.add('active')
       })
-      cursor.current.style.rotate = `-45deg`;
+      cursorElement.style.rotate = `-45deg`;
     }
   })
 
   window.addEventListener('mouseup', () => {
-    if (cursor.current) {
+    const cursorElement = cursor.current
+    if (cursorElement) {
       const cursorFlows = document.querySelectorAll('.cursorFlow')
       cursorFlows.forEach((flow) => {
         flow.classList.remove('active')
       })
 
-      cursor.current.style.rotate = `-15deg`;
+      cursorElement.style.rotate = `-15deg`;
     }
   })
 
@@ -86,7 +89,7 @@ function App() {
       <Main />
       <About />
       <Experience />
-      <Projects />
+      {/* <Projects /> */}
       <Contacts contacts={contacts} />
       <Footer />
     </>
